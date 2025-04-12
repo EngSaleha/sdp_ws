@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ina219_driver</name>
+  <version>0.1.0</version>
+  <description>
+  The ina219_driver package provides a ROS 2 interface to the INA219 voltage and current sensor. 
+  The package includes a node (ina219_node) that communicates with the INA219 sensor over the I2C bus to retrieve bus voltage and current measurements. These measurements are then published to respective ROS topics for other nodes or systems to consume. Additionally, this package may offer services for sensor calibration, and status retrieval in future iterations.
+  Intended for users who want to integrate the INA219 sensor into their ROS 2 ecosystem, this package abstracts the complexities of direct I2C communication, presenting a straightforward ROS interface.
+  </description>
+  <maintainer email="david.ney@live.com">David Ney</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
