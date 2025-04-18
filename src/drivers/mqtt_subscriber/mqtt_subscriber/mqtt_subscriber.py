@@ -17,7 +17,7 @@ class MqttSubscriber(Node):
         self.mqtt_client.on_message = self.on_message
 
         # Connect to MQTT broker
-        mqtt_broker = "192.168.86.39"  # Replace with your MQTT broker IP
+        mqtt_broker = "192.168.86.38"  # Replace with your MQTT broker IP
         self.mqtt_client.connect(mqtt_broker, 1883, 60)
 
         # Start MQTT loop

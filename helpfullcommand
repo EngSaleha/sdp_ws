@@ -1,0 +1,19 @@
+source ./env/bin/activate
+
+
+source install/setup.bash
+
+# Check the RP IP first by: `ip a`  
+export ROS_DOMAIN_ID=1
+export ROS_IP=192.168.100.147
+export ROS_HOSTNAME=192.168.100.147
+
+pip install -r requirments.txt
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+
+ros2 launch articubot_one launch_robot.launch.py
+
+miniterm -e /dev/ttyUSB0 57600
+
+ros2 run ina219_driver ina219_node
